@@ -1,0 +1,9 @@
+[ 2026-08-07 15:53:14,224 ] 35 ChurnPredictionLogger - WARNING - MySQL connection to 'customer_churn_db' unavailable. Falling back to local SQLite database at 'data/customer_churn_db.sqlite'.
+[ 2026-08-07 15:53:14,253 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.
+[ 2026-08-07 15:53:24,976 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.
+[ 2026-08-07 15:53:27,319 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.
+[ 2026-08-07 15:53:28,621 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.
+[ 2026-08-07 15:53:29,503 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.
+[ 2026-08-07 15:53:31,808 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.
+[ 2026-08-07 15:53:36,536 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.
+[ 2026-08-07 15:53:39,583 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.

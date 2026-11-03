@@ -1,0 +1,3 @@
+Prediction ID,Customer ID,Gender,Tenure (Mo),Contract,Monthly Charges,Churn Probability,Prediction,Risk Level,Timestamp
+2,INTEG-TEST-100,Female,6,Month-to-month,$89.90,76.05%,Churn,High Risk [RED],2026-08-07 10:17:03
+1,TEST-001,Female,12,One year,$65.50,15.20%,No Churn,Low Risk [GREEN],2026-08-07 10:16:39

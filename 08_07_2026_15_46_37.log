@@ -1,0 +1,4 @@
+[ 2026-08-07 15:46:37,945 ] 35 ChurnPredictionLogger - WARNING - MySQL connection to 'customer_churn_db' unavailable. Falling back to local SQLite database at 'data/customer_churn_db.sqlite'.
+[ 2026-08-07 15:46:39,297 ] 79 ChurnPredictionLogger - INFO - Database tables initialized successfully.
+[ 2026-08-07 15:46:39,319 ] 26 ChurnPredictionLogger - INFO - Inserted new customer record: TEST-001
+[ 2026-08-07 15:46:39,330 ] 41 ChurnPredictionLogger - INFO - Inserted prediction record ID: 1 for customer TEST-001

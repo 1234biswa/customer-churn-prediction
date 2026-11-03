@@ -1,0 +1,5 @@
+[ 2026-08-07 15:50:08,356 ] 35 ChurnPredictionLogger - WARNING - MySQL connection to 'customer_churn_db' unavailable. Falling back to local SQLite database at 'data/customer_churn_db.sqlite'.
+[ 2026-08-07 15:50:08,379 ] 15 ChurnPredictionLogger - INFO - Exporting datasets for Power BI dashboard integration...
+[ 2026-08-07 15:50:08,459 ] 28 ChurnPredictionLogger - INFO - Exported Power BI Customer Dataset to: powerbi\powerbi_customer_churn_dataset.csv (Rows: 7043)
+[ 2026-08-07 15:50:08,489 ] 37 ChurnPredictionLogger - INFO - Exported Power BI Prediction History to: powerbi\powerbi_prediction_history.csv (Rows: 2)
+[ 2026-08-07 15:50:08,489 ] 41 ChurnPredictionLogger - INFO - Power BI data export completed successfully.

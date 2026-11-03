@@ -1,3 +1,3 @@
 """
-Automated test suite package.
+App Components package containing UI styles and reusable layout elements.
 """

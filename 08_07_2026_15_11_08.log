@@ -1,0 +1,10 @@
+[ 2026-08-07 15:11:08,892 ] 42 ChurnPredictionLogger - INFO - Starting Data Ingestion component...
+[ 2026-08-07 15:11:08,892 ] 50 ChurnPredictionLogger - INFO - Reading raw dataset from: data\raw\Telco-Customer-Churn.csv
+[ 2026-08-07 15:11:08,927 ] 54 ChurnPredictionLogger - INFO - Dataset successfully loaded into DataFrame.
+[ 2026-08-07 15:11:08,928 ] 55 ChurnPredictionLogger - INFO - Dataset Shape: 7043 rows, 21 columns
+[ 2026-08-07 15:11:08,932 ] 60 ChurnPredictionLogger - INFO - Total missing values across all columns: 0
+[ 2026-08-07 15:11:08,948 ] 64 ChurnPredictionLogger - INFO - Duplicate rows found: 0
+[ 2026-08-07 15:11:08,949 ] 70 ChurnPredictionLogger - INFO - Splitting data into Train (80%) and Test (20%)...
+[ 2026-08-07 15:11:09,053 ] 82 ChurnPredictionLogger - INFO - Saved train dataset to: data\processed\train.csv (Shape: (5634, 21))
+[ 2026-08-07 15:11:09,053 ] 83 ChurnPredictionLogger - INFO - Saved test dataset to: data\processed\test.csv (Shape: (1409, 21))
+[ 2026-08-07 15:11:09,053 ] 84 ChurnPredictionLogger - INFO - Data Ingestion component completed successfully.

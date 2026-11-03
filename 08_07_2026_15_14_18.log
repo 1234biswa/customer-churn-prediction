@@ -1,0 +1,16 @@
+[ 2026-08-07 15:14:18,805 ] 256 ChurnPredictionLogger - INFO - Initiating Exploratory Data Analysis Pipeline...
+[ 2026-08-07 15:14:18,806 ] 47 ChurnPredictionLogger - INFO - Loading cleaned dataset from: data\processed\cleaned_telco_customer_churn.csv
+[ 2026-08-07 15:14:18,840 ] 59 ChurnPredictionLogger - INFO - Analyzing Target Variable (Churn)...
+[ 2026-08-07 15:14:18,842 ] 67 ChurnPredictionLogger - INFO - Total Customers: 7043
+[ 2026-08-07 15:14:18,842 ] 68 ChurnPredictionLogger - INFO - Retained Customers: 5174 (73.46%)
+[ 2026-08-07 15:14:18,842 ] 69 ChurnPredictionLogger - INFO - Churned Customers: 1869 (26.54%)
+[ 2026-08-07 15:14:19,405 ] 101 ChurnPredictionLogger - INFO - Saved Target Chart to: reports\figures\01_target_churn_distribution.png
+[ 2026-08-07 15:14:19,406 ] 120 ChurnPredictionLogger - INFO - Analyzing Numerical Features (tenure, MonthlyCharges, TotalCharges)...
+[ 2026-08-07 15:14:20,641 ] 139 ChurnPredictionLogger - INFO - Saved Numerical Distributions Chart to: reports\figures\02_numerical_distributions.png
+[ 2026-08-07 15:14:20,641 ] 152 ChurnPredictionLogger - INFO - Analyzing Categorical Features & Churn Relationships...
+[ 2026-08-07 15:14:21,779 ] 224 matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[ 2026-08-07 15:14:21,788 ] 224 matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+[ 2026-08-07 15:14:23,016 ] 222 ChurnPredictionLogger - INFO - Categorical churn plots successfully generated.
+[ 2026-08-07 15:14:23,016 ] 232 ChurnPredictionLogger - INFO - Calculating Feature Correlation Matrix...
+[ 2026-08-07 15:14:23,450 ] 248 ChurnPredictionLogger - INFO - Correlation Heatmap saved to: reports\figures\08_correlation_heatmap.png
+[ 2026-08-07 15:14:23,451 ] 264 ChurnPredictionLogger - INFO - Exploratory Data Analysis Completed Successfully!

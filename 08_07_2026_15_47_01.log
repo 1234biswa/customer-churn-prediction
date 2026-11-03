@@ -1,0 +1,15 @@
+[ 2026-08-07 15:47:01,572 ] 35 ChurnPredictionLogger - WARNING - MySQL connection to 'customer_churn_db' unavailable. Falling back to local SQLite database at 'data/customer_churn_db.sqlite'.
+[ 2026-08-07 15:47:01,599 ] 137 ChurnPredictionLogger - INFO - Starting Prediction Pipeline execution...
+[ 2026-08-07 15:47:01,603 ] 141 ChurnPredictionLogger - INFO - Validating Input... PASSED
+[ 2026-08-07 15:47:01,604 ] 144 ChurnPredictionLogger - INFO - Transforming Features...
+[ 2026-08-07 15:47:01,604 ] 28 ChurnPredictionLogger - INFO - Applying Feature Engineering transformations...
+[ 2026-08-07 15:47:01,608 ] 36 ChurnPredictionLogger - INFO - Created feature: 'TenureGroup'
+[ 2026-08-07 15:47:01,610 ] 41 ChurnPredictionLogger - INFO - Created feature: 'ChargesPerTenure'
+[ 2026-08-07 15:47:01,619 ] 47 ChurnPredictionLogger - INFO - Created feature: 'HasAddons'
+[ 2026-08-07 15:47:01,620 ] 49 ChurnPredictionLogger - INFO - Feature Engineering completed. Total features: 23
+[ 2026-08-07 15:47:01,621 ] 153 ChurnPredictionLogger - INFO - Loading Preprocessor from: artifacts\preprocessor.joblib
+[ 2026-08-07 15:47:03,139 ] 156 ChurnPredictionLogger - INFO - Loading Model from: artifacts\best_model.joblib
+[ 2026-08-07 15:47:03,333 ] 172 ChurnPredictionLogger - INFO - Generating Prediction...
+[ 2026-08-07 15:47:03,335 ] 178 ChurnPredictionLogger - INFO - Prediction Completed Successfully. Probability: 0.7605, Risk: High Risk [RED]
+[ 2026-08-07 15:47:03,354 ] 26 ChurnPredictionLogger - INFO - Inserted new customer record: INTEG-TEST-100
+[ 2026-08-07 15:47:03,364 ] 41 ChurnPredictionLogger - INFO - Inserted prediction record ID: 2 for customer INTEG-TEST-100
