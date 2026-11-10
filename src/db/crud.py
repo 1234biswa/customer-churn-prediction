@@ -158,3 +158,16 @@ def log_application_event(db: Session, event_type: str, description: str, status
         db.rollback()
         logger.error(f"Failed to record application log: {e}")
         return None
+
+
+def link_customer_to_user(db: Session, user_id: int, customer_id: str) -> None:
+    """Associate a customer with its creating application account."""
+    try:
+        existing = db.query(UserCustomer).filter_by(user_id=user_id, customer_id=customer_id).first()
+        if existing is None:
+            db.add(UserCustomer(user_id=user_id, customer_id=customer_id))
+            db.commit()
+    except Exception as e:
+        db.rollback()
+        logger.error(f"Failed to link customer {customer_id} to account: {e}")
+        raise CustomException(e, sys)
