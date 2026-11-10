@@ -1,7 +1,7 @@
 import sys
 import pandas as pd
 from sqlalchemy.orm import Session
-from src.db.database import Customer, Prediction, ModelInfo, ApplicationLog
+from src.db.database import Customer, Prediction, ModelInfo, ApplicationLog, UserCustomer
 from src.utils.logger import logger
 from src.utils.exception import CustomException
 
@@ -55,7 +55,7 @@ def get_customer_by_id(db: Session, customer_id: str) -> Customer:
         raise CustomException(e, sys)
 
 
-def get_prediction_history(db: Session, limit: int = 100) -> pd.DataFrame:
+def get_prediction_history(db: Session, limit: int = 100, user_id: int = None) -> pd.DataFrame:
     """Retrieves merged prediction history with customer features as a Pandas DataFrame."""
     try:
         query = (
@@ -75,6 +75,8 @@ def get_prediction_history(db: Session, limit: int = 100) -> pd.DataFrame:
             .order_by(Prediction.prediction_time.desc())
             .limit(limit)
         )
+        if user_id is not None:
+            query = query.join(UserCustomer, UserCustomer.customer_id == Prediction.customer_id).filter(UserCustomer.user_id == user_id)
         results = query.all()
         if not results:
             return pd.DataFrame()
