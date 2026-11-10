@@ -1,6 +1,7 @@
 import os
 import sys
 import datetime
+import uuid
 sys.path.append(os.getcwd())
 
 import streamlit as st
@@ -9,6 +10,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
+from src.auth import render_auth_page
 from src.utils.styles import apply_custom_css
 from src.db import (
     init_db,
@@ -16,7 +18,8 @@ from src.db import (
     insert_customer,
     insert_prediction,
     get_prediction_history,
-    log_application_event
+    log_application_event,
+    link_customer_to_user
 )
 
 # Initialize Database Schema
@@ -35,6 +38,20 @@ st.set_page_config(
 
 # Apply Custom Styles
 apply_custom_css()
+
+# -----------------------------------------------------------------------------
+# AUTHENTICATION GATE
+# Streamlit session state is server-side for the active browser session.
+# -----------------------------------------------------------------------------
+if "user_id" not in st.session_state:
+    render_auth_page()
+    st.stop()
+
+st.sidebar.success(f"Signed in as {st.session_state['user_email']}")
+if st.sidebar.button("Log out", use_container_width=True):
+    for key in ("user_id", "user_email"):
+        st.session_state.pop(key, None)
+    st.rerun()
 
 # Sidebar Navigation
 st.sidebar.markdown("## 📊 **ChurnGuard Enterprise**")
@@ -210,7 +227,7 @@ elif page == "🎯 Single Customer Prediction":
 
     if submit_button:
         try:
-            cust_id = f"CUST-{datetime.datetime.now().strftime('%H%M%S')}"
+            cust_id = f"CUST-{uuid.uuid4().hex[:12].upper()}"
             custom_data = CustomData(
                 gender=gender,
                 SeniorCitizen=senior_citizen,
@@ -255,6 +272,7 @@ elif page == "🎯 Single Customer Prediction":
                     "monthly_charges": monthly_charges,
                     "total_charges": total_charges
                 })
+                link_customer_to_user(db, st.session_state["user_id"], cust_id)
 
                 insert_prediction(db, {
                     "customer_id": cust_id,
@@ -324,7 +342,7 @@ elif page == "📈 Analytics Dashboard":
 
     db = SessionLocal()
     try:
-        history_df = get_prediction_history(db, limit=500)
+        history_df = get_prediction_history(db, limit=500, user_id=st.session_state["user_id"])
     finally:
         db.close()
 
