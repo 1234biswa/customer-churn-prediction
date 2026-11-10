@@ -403,7 +403,7 @@ elif page == "📜 Prediction History":
 
     db = SessionLocal()
     try:
-        history_df = get_prediction_history(db, limit=500)
+        history_df = get_prediction_history(db, limit=500, user_id=st.session_state["user_id"])
     finally:
         db.close()
 
