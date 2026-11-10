@@ -2,7 +2,7 @@
 Database Package containing SQLAlchemy engine connection, ORM models, and CRUD operations.
 """
 from src.db.connection import engine, SessionLocal, get_db_session
-from src.db.database import Base, Customer, Prediction, ModelInfo, ApplicationLog, init_db
+from src.db.database import Base, User, UserCustomer, Customer, Prediction, ModelInfo, ApplicationLog, init_db
 from src.db.crud import (
     insert_customer,
     insert_prediction,
@@ -12,6 +12,7 @@ from src.db.crud import (
     delete_customer,
     list_all_customers,
     log_application_event,
+    link_customer_to_user,
 )
 
 __all__ = [
@@ -19,6 +20,8 @@ __all__ = [
     "SessionLocal",
     "get_db_session",
     "Base",
+    "User",
+    "UserCustomer",
     "Customer",
     "Prediction",
     "ModelInfo",
