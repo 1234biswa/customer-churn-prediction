@@ -8,6 +8,25 @@ from src.utils.logger import logger
 Base = declarative_base()
 
 
+class User(Base):
+    """Application account. Passwords are stored only as bcrypt hashes."""
+    __tablename__ = "users"
+
+    user_id = Column(Integer, primary_key=True, autoincrement=True)
+    email = Column(String(254), nullable=False, unique=True, index=True)
+    password_hash = Column(String(60), nullable=False)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+
+
+class UserCustomer(Base):
+    """Ownership mapping used to isolate each account's prediction history."""
+    __tablename__ = "user_customers"
+
+    user_id = Column(Integer, ForeignKey("users.user_id", ondelete="CASCADE"), primary_key=True)
+    customer_id = Column(String(50), ForeignKey("customers.customer_id", ondelete="CASCADE"), primary_key=True)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow, nullable=False)
+
+
 class Customer(Base):
     """SQLAlchemy ORM model for storing customer profiles."""
     __tablename__ = "customers"

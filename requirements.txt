@@ -25,6 +25,7 @@ sqlalchemy>=2.0.0
 # Utilities & Config
 pyyaml>=6.0
 python-dotenv>=1.0.0
+bcrypt>=4.0.0
 
 # Testing & Code Quality
 pytest>=7.4.0
